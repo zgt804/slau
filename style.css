@@ -1,0 +1,17 @@
+.main {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.main div {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 40px;
+}
+
+.controls {
+    width: 700px;
+    margin: 20px auto;
+}
