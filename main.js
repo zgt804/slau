@@ -92,12 +92,32 @@ function toDiagonal(matrix) {
     return matrix;
 }
 
-function resulter(result, message) {
+function vector(matrix_old, x) {
+    let result = [];
+    let bitch = [];
+    let square = toSquare(matrix_old);
+    let beta = getBeta(matrix_old);
+    for(let i = 0; i < x.length; i++) {
+        bitch[i] = [];
+        for(let j = 0; j < 1; j++) {
+            bitch[i][j] = x[i];
+        }
+    }
+    let multiply = multiplyMatrix(square, bitch);
+    for(let i = 0; i < multiply.length; i++) {
+        for(let j = 0; j < multiply[i].length; j++) {
+            result[i] = beta[i][j] - multiply[i][j];
+        }
+    }
+    return result;
+}
+
+function resulter(result, vector, message) {
     let div = document.getElementById('result');
     div.innerHTML = '<p>' + message + '</p>';
     for(let i = 0; i < result.length; i++) {
         let p = document.createElement("p");
-        p.innerHTML = '<p>x' + (i+1) + ' = ' + result[i] + ';</p>';
+        p.innerHTML = '<p>x' + (i+1) + ' = ' + result[i] + '; Вектор невязки = ' + vector[i] +'</p>';
         div.append(p);
     }
 }

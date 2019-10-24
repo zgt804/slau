@@ -1,6 +1,7 @@
 function secondGauss() {
 
     let matrix = parseMatrix();
+    let matrix_old = parseMatrix();
     let b = [];
     let c = [];
     let result = [];
@@ -63,6 +64,9 @@ function secondGauss() {
     for(let i = 0; i < result.length; i++) {
         result[i] = Math.floor(result[i] * 100) / 100;
     }
-    resulter(result, 'Второй метод Гаусса');
+
+    let vector2 = vector(matrix_old, result);
+
+    resulter(result, vector2, 'Второй метод Гаусса');
 
 }

@@ -1,6 +1,7 @@
 function firstGauss() {
 
     let matrix = parseMatrix();
+    let matrix_old = parseMatrix();
     let x = 1;
     let factor = 1;
 
@@ -50,5 +51,8 @@ function firstGauss() {
     for(let i = 0; i < result.length; i++) {
         result[i] = Math.floor(result[i] * 100) / 100;
     }
-    resulter(result, 'Первый метод Гаусса');
+
+    let vector2 = vector(matrix_old, result);
+
+    resulter(result, vector2, 'Первый метод Гаусса');
 }

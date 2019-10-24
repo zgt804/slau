@@ -1,5 +1,6 @@
 function ortogonalization() {
     let matrix = parseMatrix();
+    let matrix_old = parseMatrix();
     let sum = 0;
     let sqr = 0;
     let lamba = 0;
@@ -33,6 +34,8 @@ function ortogonalization() {
         result[i] = Math.floor(result[i] * 100) / 100;
     }
 
-    resulter(result, 'Метод ортогонализации');
+    let vector2 = vector(matrix_old, result);
+
+    resulter(result, vector2, 'Метод ортогонализации');
 
 }

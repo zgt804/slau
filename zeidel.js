@@ -1,5 +1,6 @@
 function zeidel() {
     let matrix = parseMatrix();
+    let matrix_old = parseMatrix();
     let res = [];
     let num = prompt("Введите количество итераций", 10);
 
@@ -11,7 +12,9 @@ function zeidel() {
         res = iterationZeidel(matrix, res);
     }
 
-    resulter(res, 'Метод Зейделя');
+    let vector2 = vector(matrix_old, res);
+
+    resulter(res, vector2, 'Метод Зейделя');
 }
 
 function iterationZeidel(matrix, res) {

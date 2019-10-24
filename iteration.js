@@ -1,5 +1,6 @@
 function iteration() {
     let matrix = parseMatrix();
+    let matrix_old = parseMatrix();
     let res = [];
     let num = prompt("Введите количество итераций", 10);
 
@@ -11,7 +12,9 @@ function iteration() {
         res = iterationMain(matrix, res);
     }
 
-    resulter(res, 'Метод итерации');
+    let vector2 = vector(matrix_old, res);
+
+    resulter(res, vector2, 'Метод итерации');
 }
 
 function iterationMain(matrix, res) {
